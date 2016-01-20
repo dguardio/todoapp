@@ -1,2 +1,1 @@
-# todoapp
-Using this to learn Jquery
+The todo list for the HackerEarth AngelPrime Challenge 
