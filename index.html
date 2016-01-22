@@ -1,49 +1,60 @@
 <html>
     <head>
-        <title>AngelPrime to-do List</title>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>To Do List</title>
 
         <link rel="stylesheet" href="lib/Bootstrap/bootstrap.min.css" />
         <link rel="stylesheet" href="lib/jQuery/jquery.ui.min.css" />
         <link rel="stylesheet" href="assets/todo.css" />
+        <style>
+        .row{
+            margin-bottom: 10px;
+        }
+        </style>
     </head>
 
     <body class="well">
-        <div id="container">
+        <div id="header"> Simple To Do App </div>
 
-            <div id="header"> To Do List </div>
 
-            <div class="task-list task-container" id="pending">
-                <h3>Pending</h3>
-                <!--<div class="todo-task">
-                    <div class="task-header">Sample Header</div>
-                    <div class="task-date">25/06/1992</div>
-                    <div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
-                </div>-->
-            </div>
-
-            <div class="task-list task-container" id="inProgress">
-                <h3>In Progress</h3>
-            </div>
-
-            <div class="task-list task-container" id="completed">
-                <h3>Completed</h3>
-            </div>
-
-            <div class="task-list">
-                <h3>Add a task</h3>
-                <form id="todo-form">
-                    <input type="text" placeholder="Title" />
-                    <textarea placeholder="Description"></textarea>
-                    <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
-                    <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
-                </form>
-
-                <input type="button" class="btn btn-primary" value="Clear Data" onclick="todo.clear();" />
-
-                <div id="delete-div">
-                    Drag Here to Delete
+        <div class="row container-fluid" id="container">
+            <div class="row">
+                <div class="task-list col-lg-12">
+                    <h3>Add a task</h3>
+                    <form id="todo-form">
+                        <input type="text" placeholder="Title" />
+                        <textarea placeholder="Description"></textarea>
+                        <input type="text" id="datepicker" placeholder="Due Date (dd/mm/yyyy)" />
+                        <input type="button" class="btn btn-primary" value="Add Task" onclick="todo.add();" />
+                    </form>
+                    <div id="delete-div">
+                        <p>Delete Here</p>
+                    </div>
+                </div>
+                <div class="task-list task-container col-lg-12" id="pending">
+                    <h3>Yet To Do</h3>
+                    <!--<div class="todo-task">
+                        <div class="task-header">Sample Header</div>
+                        <div class="task-date">25/06/1992</div>
+                        <div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
+                    </div>-->
                 </div>
             </div>
+                <div class="row">
+                <div class="task-list task-container col-lg-12" id="inProgress">
+                    <h3>In Progress</h3>
+                </div>
+                </div>
+                <div class="row">
+
+                <div class="task-list task-container col-lg-12" id="completed">
+                    <h3>Done</h3>
+                </div>
+                </div>
+
+            </div>
+
 
             <div style="clear:both;"></div>
 	          <script type="text/javascript" src="lib/jQuery/jquery.min.js"></script>
@@ -61,5 +72,16 @@
             </script>
 
         </div>
+        <script type="text/javascript">
+        $( document ).ready(function(){
+
+            $(".btn").click(function(event){
+
+                $("#pending,#inProgress,#completed").show();
+                return false;
+            });
+        });
+        </script>
+        
     </body>
 </html>

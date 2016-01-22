@@ -8,6 +8,8 @@ Using newer versions of jQuery and jQuery UI in place of the links given in prob
 All data is stored in local storage
 User data is extracted from local storage and saved in variable todo.data
 Otherwise, comments are provided at appropriate places
+
+Kindly note, copyright information is accurate and some part of this code has been tweaked and reused by Akinwoleola Opeyemi
 */
 
 var todo = todo || {},
