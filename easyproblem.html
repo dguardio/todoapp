@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> Easy Problem Set </title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- All Styles Here -->
+    <style>
+.square {
+	width: 300px;
+	height: 300px;
+	background: blue;
+}
+
+#square2 {
+	width: 250px;
+	height: 250px;
+	background: black;
+}
+
+#square3 {
+	width: 200px;
+	height: 200px;
+	background: green;
+}
+
+#square4 {
+	width: 150px;
+	height: 150px;
+	background: white;
+}
+
+#square5 {
+	width: 100px;
+	height: 100px;
+	background:yellow; 
+}
+.margin {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.button {
+	text-align: center;
+}
+
+    </style>
+<!-- Close Styles -->
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<h1>Changing Object Dimensions</h1>
+	</div>
+	<div class="row">
+		<div class="square margin col-lg-12" id="square1">
+			<div class="margin" id="square2">
+				<div class="margin" id="square3">
+					<div class="margin" id="square4">
+						<div class="margin" id="square5">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="buttons">
+			<button class="btn" id="btn1" type="submit">Change Square 1</button>
+			<button class="btn" id="btn2" type="submit">Change Square 2</button>
+			<button class="btn" id="btn3" type="submit">Change Square 3</button>
+			<button class="btn" id="btn4" type="submit">Change Square 4</button>
+			<button class="btn" id="btn5" type="submit">Change Square 5</button>
+			<button class="btn" id="btn6" type="submit">Revert</button>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+$( document ).ready(function(){
+/*	var test = $(".square,.square div").attr("width");
+	console.log(test);*/
+	function shrinker(param){
+		$(param).animate({
+			"width":"50%",
+			"height":"50%"
+		});
+		
+	}
+
+	function expand(){
+
+	}
+
+	$("button").click(function(){var action ="#"+this.id;
+	
+		switch (action) {
+			case "#btn1":
+
+				shrinker(".square, .square div");
+				break;
+			case "#btn2":
+				shrinker("#square2, #square2 div");
+				break;
+			case "#btn3":
+				shrinker("#square3, #square3 div");
+				break;
+			case "#btn4":
+				shrinker("#square4, #square4 div");
+				break;
+			case "#btn5":
+				shrinker("#square5");
+				break;
+			case "#btn6":
+				$(".square,.square div").css({
+					"width":"",
+					"height":""
+				});
+				break;
+			default:
+				alert("Click a button to resize");
+		}
+	});
+});
+	</script>
+</body>
+</html>
